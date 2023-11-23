@@ -1,4 +1,7 @@
 #include <stdint.h>
+// datasheet
+// https://www.st.com/content/ccc/resource/technical/document/datasheet/54/2a/85/76/e3/97/42/18/DM00075867.pdf/files/DM00075867.pdf/jcr:content/translations/en.DM00075867.pdf
+// copy of datasheet is locally stored as en.DM00075867.pdf
 extern int i2c_read(uint8_t bus_address, uint8_t register_address,
                     uint8_t *buffer, uint16_t length);
 extern int i2c_write(uint8_t bus_address, uint8_t register_address,
@@ -6,7 +9,8 @@ extern int i2c_write(uint8_t bus_address, uint8_t register_address,
 
 #define SDO_SA1_PIN_GROUNDED 1
 
-// i2c (SAD) Slave ADdress can change depending on pin configuration. Section 5.1.1 I2C Operation
+// i2c (SAD) Slave ADdress can change depending on pin configuration.
+// Section 5.1.1 I2C Operation
 #ifdef SDO_SA1_PIN_GROUNDED
 // 0b0011100
 #define I2C_BUS_ADDRESS 0x1C
